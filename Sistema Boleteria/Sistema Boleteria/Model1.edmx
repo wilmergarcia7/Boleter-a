@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BDBoleteriaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Boletos">
+          <Key>
+            <PropertyRef Name="idBoleto" />
+          </Key>
+          <Property Name="idBoleto" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idtipo" Type="tinyint" Nullable="false" />
+          <Property Name="iddestino" Type="tinyint" Nullable="false" />
+          <Property Name="efectivoTotal" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="fechaEmision" Type="date" Nullable="false" />
+          <Property Name="cantidad" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Destinos">
+          <Key>
+            <PropertyRef Name="idDestino" />
+          </Key>
+          <Property Name="idDestino" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="destino" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="precio" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DetalleBoletos">
+          <Key>
+            <PropertyRef Name="idDetalleBoleto" />
+          </Key>
+          <Property Name="idDetalleBoleto" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idUsuario" Type="tinyint" Nullable="false" />
+          <Property Name="idboleto" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TiposdeBoletos">
+          <Key>
+            <PropertyRef Name="idTIpo" />
+          </Key>
+          <Property Name="idTIpo" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tipodeBoleto" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="primerNombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="segundoNombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="primerApellido" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="segundoApellido" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="genero" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="telefono" Type="nvarchar" MaxLength="9" Nullable="false" />
+          <Property Name="direccion" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="identidad" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="usuario" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Boletos_Destinos">
+          <End Role="Destinos" Type="Self.Destinos" Multiplicity="1" />
+          <End Role="Boletos" Type="Self.Boletos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Destinos">
+              <PropertyRef Name="idDestino" />
+            </Principal>
+            <Dependent Role="Boletos">
+              <PropertyRef Name="iddestino" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Boletos_TiposdeBoletos">
+          <End Role="TiposdeBoletos" Type="Self.TiposdeBoletos" Multiplicity="1" />
+          <End Role="Boletos" Type="Self.Boletos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposdeBoletos">
+              <PropertyRef Name="idTIpo" />
+            </Principal>
+            <Dependent Role="Boletos">
+              <PropertyRef Name="idtipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DetalleBoletos_Boletos">
+          <End Role="Boletos" Type="Self.Boletos" Multiplicity="1" />
+          <End Role="DetalleBoletos" Type="Self.DetalleBoletos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Boletos">
+              <PropertyRef Name="idBoleto" />
+            </Principal>
+            <Dependent Role="DetalleBoletos">
+              <PropertyRef Name="idboleto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DetalleBoletos_Usuarios">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="DetalleBoletos" Type="Self.DetalleBoletos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="DetalleBoletos">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BDBoleteriaModelStoreContainer">
+          <EntitySet Name="Boletos" EntityType="Self.Boletos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Destinos" EntityType="Self.Destinos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DetalleBoletos" EntityType="Self.DetalleBoletos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TiposdeBoletos" EntityType="Self.TiposdeBoletos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Boletos_Destinos" Association="Self.FK_Boletos_Destinos">
+            <End Role="Destinos" EntitySet="Destinos" />
+            <End Role="Boletos" EntitySet="Boletos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Boletos_TiposdeBoletos" Association="Self.FK_Boletos_TiposdeBoletos">
+            <End Role="TiposdeBoletos" EntitySet="TiposdeBoletos" />
+            <End Role="Boletos" EntitySet="Boletos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DetalleBoletos_Boletos" Association="Self.FK_DetalleBoletos_Boletos">
+            <End Role="Boletos" EntitySet="Boletos" />
+            <End Role="DetalleBoletos" EntitySet="DetalleBoletos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DetalleBoletos_Usuarios" Association="Self.FK_DetalleBoletos_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="DetalleBoletos" EntitySet="DetalleBoletos" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BDBoleteriaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Boletos">
+          <Key>
+            <PropertyRef Name="idBoleto" />
+          </Key>
+          <Property Name="idBoleto" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="efectivoTotal" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="fechaEmision" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="cantidad" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="Destinos" Relationship="Self.FK_Boletos_Destinos" FromRole="Boletos" ToRole="Destinos" />
+          <NavigationProperty Name="TiposdeBoletos" Relationship="Self.FK_Boletos_TiposdeBoletos" FromRole="Boletos" ToRole="TiposdeBoletos" />
+          <NavigationProperty Name="DetalleBoletos" Relationship="Self.FK_DetalleBoletos_Boletos" FromRole="Boletos" ToRole="DetalleBoletos" />
+        </EntityType>
+        <EntityType Name="Destinos">
+          <Key>
+            <PropertyRef Name="idDestino" />
+          </Key>
+          <Property Name="idDestino" Type="Byte" Nullable="false" />
+          <Property Name="destino" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="precio" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Boletos" Relationship="Self.FK_Boletos_Destinos" FromRole="Destinos" ToRole="Boletos" />
+        </EntityType>
+        <EntityType Name="DetalleBoletos">
+          <Key>
+            <PropertyRef Name="idDetalleBoleto" />
+          </Key>
+          <Property Name="idDetalleBoleto" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Boletos" Relationship="Self.FK_DetalleBoletos_Boletos" FromRole="DetalleBoletos" ToRole="Boletos" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK_DetalleBoletos_Usuarios" FromRole="DetalleBoletos" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TiposdeBoletos">
+          <Key>
+            <PropertyRef Name="idTIpo" />
+          </Key>
+          <Property Name="idTIpo" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipodeBoleto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Boletos" Relationship="Self.FK_Boletos_TiposdeBoletos" FromRole="TiposdeBoletos" ToRole="Boletos" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="primerNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="segundoNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="primerApellido" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="segundoApellido" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="genero" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="telefono" Type="String" MaxLength="9" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="direccion" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="identidad" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="DetalleBoletos" Relationship="Self.FK_DetalleBoletos_Usuarios" FromRole="Usuarios" ToRole="DetalleBoletos" />
+        </EntityType>
+        <Association Name="FK_Boletos_Destinos">
+          <End Role="Destinos" Type="Self.Destinos" Multiplicity="1" />
+          <End Role="Boletos" Type="Self.Boletos" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Boletos_TiposdeBoletos">
+          <End Role="TiposdeBoletos" Type="Self.TiposdeBoletos" Multiplicity="1" />
+          <End Role="Boletos" Type="Self.Boletos" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_DetalleBoletos_Boletos">
+          <End Role="Boletos" Type="Self.Boletos" Multiplicity="1" />
+          <End Role="DetalleBoletos" Type="Self.DetalleBoletos" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_DetalleBoletos_Usuarios">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="DetalleBoletos" Type="Self.DetalleBoletos" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="BDBoleteriaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Boletos" EntityType="Self.Boletos" />
+          <EntitySet Name="Destinos" EntityType="Self.Destinos" />
+          <EntitySet Name="DetalleBoletos" EntityType="Self.DetalleBoletos" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="TiposdeBoletos" EntityType="Self.TiposdeBoletos" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+          <AssociationSet Name="FK_Boletos_Destinos" Association="Self.FK_Boletos_Destinos">
+            <End Role="Destinos" EntitySet="Destinos" />
+            <End Role="Boletos" EntitySet="Boletos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Boletos_TiposdeBoletos" Association="Self.FK_Boletos_TiposdeBoletos">
+            <End Role="TiposdeBoletos" EntitySet="TiposdeBoletos" />
+            <End Role="Boletos" EntitySet="Boletos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DetalleBoletos_Boletos" Association="Self.FK_DetalleBoletos_Boletos">
+            <End Role="Boletos" EntitySet="Boletos" />
+            <End Role="DetalleBoletos" EntitySet="DetalleBoletos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DetalleBoletos_Usuarios" Association="Self.FK_DetalleBoletos_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="DetalleBoletos" EntitySet="DetalleBoletos" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BDBoleteriaModelStoreContainer" CdmEntityContainer="BDBoleteriaEntities">
+          <EntitySetMapping Name="Boletos">
+            <EntityTypeMapping TypeName="BDBoleteriaModel.Boletos">
+              <MappingFragment StoreEntitySet="Boletos">
+                <ScalarProperty Name="idBoleto" ColumnName="idBoleto" />
+                <ScalarProperty Name="efectivoTotal" ColumnName="efectivoTotal" />
+                <ScalarProperty Name="fechaEmision" ColumnName="fechaEmision" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Destinos">
+            <EntityTypeMapping TypeName="BDBoleteriaModel.Destinos">
+              <MappingFragment StoreEntitySet="Destinos">
+                <ScalarProperty Name="idDestino" ColumnName="idDestino" />
+                <ScalarProperty Name="destino" ColumnName="destino" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DetalleBoletos">
+            <EntityTypeMapping TypeName="BDBoleteriaModel.DetalleBoletos">
+              <MappingFragment StoreEntitySet="DetalleBoletos">
+                <ScalarProperty Name="idDetalleBoleto" ColumnName="idDetalleBoleto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="BDBoleteriaModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TiposdeBoletos">
+            <EntityTypeMapping TypeName="BDBoleteriaModel.TiposdeBoletos">
+              <MappingFragment StoreEntitySet="TiposdeBoletos">
+                <ScalarProperty Name="idTIpo" ColumnName="idTIpo" />
+                <ScalarProperty Name="tipodeBoleto" ColumnName="tipodeBoleto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="BDBoleteriaModel.Usuarios">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="primerNombre" ColumnName="primerNombre" />
+                <ScalarProperty Name="segundoNombre" ColumnName="segundoNombre" />
+                <ScalarProperty Name="primerApellido" ColumnName="primerApellido" />
+                <ScalarProperty Name="segundoApellido" ColumnName="segundoApellido" />
+                <ScalarProperty Name="genero" ColumnName="genero" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="identidad" ColumnName="identidad" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_Boletos_Destinos" TypeName="BDBoleteriaModel.FK_Boletos_Destinos" StoreEntitySet="Boletos">
+            <EndProperty Name="Destinos">
+              <ScalarProperty Name="idDestino" ColumnName="iddestino" />
+            </EndProperty>
+            <EndProperty Name="Boletos">
+              <ScalarProperty Name="idBoleto" ColumnName="idBoleto" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Boletos_TiposdeBoletos" TypeName="BDBoleteriaModel.FK_Boletos_TiposdeBoletos" StoreEntitySet="Boletos">
+            <EndProperty Name="TiposdeBoletos">
+              <ScalarProperty Name="idTIpo" ColumnName="idtipo" />
+            </EndProperty>
+            <EndProperty Name="Boletos">
+              <ScalarProperty Name="idBoleto" ColumnName="idBoleto" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_DetalleBoletos_Boletos" TypeName="BDBoleteriaModel.FK_DetalleBoletos_Boletos" StoreEntitySet="DetalleBoletos">
+            <EndProperty Name="Boletos">
+              <ScalarProperty Name="idBoleto" ColumnName="idboleto" />
+            </EndProperty>
+            <EndProperty Name="DetalleBoletos">
+              <ScalarProperty Name="idDetalleBoleto" ColumnName="idDetalleBoleto" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_DetalleBoletos_Usuarios" TypeName="BDBoleteriaModel.FK_DetalleBoletos_Usuarios" StoreEntitySet="DetalleBoletos">
+            <EndProperty Name="Usuarios">
+              <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+            </EndProperty>
+            <EndProperty Name="DetalleBoletos">
+              <ScalarProperty Name="idDetalleBoleto" ColumnName="idDetalleBoleto" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

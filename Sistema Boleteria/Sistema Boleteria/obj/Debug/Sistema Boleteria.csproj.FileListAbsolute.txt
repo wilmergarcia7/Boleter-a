@@ -1,0 +1,20 @@
+D:\Universidad\II P 2021\Programación de negocios\Boletería\Sistema Boleteria\Sistema Boleteria\bin\Debug\Sistema Boleteria.exe.config
+D:\Universidad\II P 2021\Programación de negocios\Boletería\Sistema Boleteria\Sistema Boleteria\bin\Debug\Sistema Boleteria.exe
+D:\Universidad\II P 2021\Programación de negocios\Boletería\Sistema Boleteria\Sistema Boleteria\bin\Debug\Sistema Boleteria.pdb
+D:\Universidad\II P 2021\Programación de negocios\Boletería\Sistema Boleteria\Sistema Boleteria\bin\Debug\EntityFramework.dll
+D:\Universidad\II P 2021\Programación de negocios\Boletería\Sistema Boleteria\Sistema Boleteria\bin\Debug\EntityFramework.xml
+D:\Universidad\II P 2021\Programación de negocios\Boletería\Sistema Boleteria\Sistema Boleteria\obj\Debug\Sistema Boleteria.csproj.AssemblyReference.cache
+D:\Universidad\II P 2021\Programación de negocios\Boletería\Sistema Boleteria\Sistema Boleteria\obj\Debug\Sistema_Boleteria.Form1.resources
+D:\Universidad\II P 2021\Programación de negocios\Boletería\Sistema Boleteria\Sistema Boleteria\obj\Debug\Sistema_Boleteria.Properties.Resources.resources
+D:\Universidad\II P 2021\Programación de negocios\Boletería\Sistema Boleteria\Sistema Boleteria\obj\Debug\Sistema Boleteria.csproj.GenerateResource.cache
+D:\Universidad\II P 2021\Programación de negocios\Boletería\Sistema Boleteria\Sistema Boleteria\obj\Debug\Sistema Boleteria.csproj.CoreCompileInputs.cache
+D:\Universidad\II P 2021\Programación de negocios\Boletería\Sistema Boleteria\Sistema Boleteria\obj\Debug\Sistema Boleteria.csproj.CopyComplete
+D:\Universidad\II P 2021\Programación de negocios\Boletería\Sistema Boleteria\Sistema Boleteria\obj\Debug\Sistema Boleteria.exe
+D:\Universidad\II P 2021\Programación de negocios\Boletería\Sistema Boleteria\Sistema Boleteria\obj\Debug\Sistema Boleteria.pdb
+D:\Universidad\II P 2021\Programación de negocios\Boletería\Sistema Boleteria\Sistema Boleteria\obj\Debug\Sistema_Boleteria.Boleteria.resources
+D:\Universidad\II P 2021\Programación de negocios\Boletería\Sistema Boleteria\Sistema Boleteria\obj\Debug\Sistema_Boleteria.Empleados.resources
+D:\Universidad\II P 2021\Programación de negocios\Boletería\Sistema Boleteria\Sistema Boleteria\obj\Debug\Sistema_Boleteria.ImpresionBoleto.resources
+D:\Universidad\II P 2021\Programación de negocios\Boletería\Sistema Boleteria\Sistema Boleteria\obj\Debug\Sistema_Boleteria.NuevoUsuario.resources
+D:\Universidad\II P 2021\Programación de negocios\Boletería\Sistema Boleteria\Sistema Boleteria\obj\Debug\Sistema_Boleteria.ModificarEmpleado.resources
+D:\Universidad\II P 2021\Programación de negocios\Boletería\Sistema Boleteria\Sistema Boleteria\obj\Debug\Sistema_Boleteria.NuevoDestino.resources
+D:\Universidad\II P 2021\Programación de negocios\Boletería\Sistema Boleteria\Sistema Boleteria\obj\Debug\Sistema_Boleteria.TipoBoleto.resources
