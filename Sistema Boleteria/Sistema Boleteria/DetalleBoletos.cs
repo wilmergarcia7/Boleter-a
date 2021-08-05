@@ -15,6 +15,8 @@ namespace Sistema_Boleteria
     public partial class DetalleBoletos
     {
         public byte idDetalleBoleto { get; set; }
+        public byte idUsuario { get; set; }
+        public byte idboleto { get; set; }
     
         public virtual Boletos Boletos { get; set; }
         public virtual Usuarios Usuarios { get; set; }

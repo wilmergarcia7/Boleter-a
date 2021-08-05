@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BDBoleteriaModelStoreContainer" CdmEntityContainer="BDBoleteriaEntities">
+    <EntitySetMapping Name="Administradores">
+      <EntityTypeMapping TypeName="BDBoleteriaModel.Administradores">
+        <MappingFragment StoreEntitySet="Administradores">
+          <ScalarProperty Name="idAdmin" ColumnName="idAdmin" />
+          <ScalarProperty Name="Admin" ColumnName="Admin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Boletos">
+      <EntityTypeMapping TypeName="BDBoleteriaModel.Boletos">
+        <MappingFragment StoreEntitySet="Boletos">
+          <ScalarProperty Name="idBoleto" ColumnName="idBoleto" />
+          <ScalarProperty Name="idtipo" ColumnName="idtipo" />
+          <ScalarProperty Name="iddestino" ColumnName="iddestino" />
+          <ScalarProperty Name="efectivoTotal" ColumnName="efectivoTotal" />
+          <ScalarProperty Name="fechaEmision" ColumnName="fechaEmision" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Destinos">
+      <EntityTypeMapping TypeName="BDBoleteriaModel.Destinos">
+        <MappingFragment StoreEntitySet="Destinos">
+          <ScalarProperty Name="idDestino" ColumnName="idDestino" />
+          <ScalarProperty Name="destino" ColumnName="destino" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetalleBoletos">
+      <EntityTypeMapping TypeName="BDBoleteriaModel.DetalleBoletos">
+        <MappingFragment StoreEntitySet="DetalleBoletos">
+          <ScalarProperty Name="idDetalleBoleto" ColumnName="idDetalleBoleto" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idboleto" ColumnName="idboleto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Generos">
+      <EntityTypeMapping TypeName="BDBoleteriaModel.Generos">
+        <MappingFragment StoreEntitySet="Generos">
+          <ScalarProperty Name="idGenero" ColumnName="idGenero" />
+          <ScalarProperty Name="genero" ColumnName="genero" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TiposdeBoletos">
+      <EntityTypeMapping TypeName="BDBoleteriaModel.TiposdeBoletos">
+        <MappingFragment StoreEntitySet="TiposdeBoletos">
+          <ScalarProperty Name="idTIpo" ColumnName="idTIpo" />
+          <ScalarProperty Name="tipodeBoleto" ColumnName="tipodeBoleto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="BDBoleteriaModel.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="primerNombre" ColumnName="primerNombre" />
+          <ScalarProperty Name="segundoNombre" ColumnName="segundoNombre" />
+          <ScalarProperty Name="primerApellido" ColumnName="primerApellido" />
+          <ScalarProperty Name="segundoApellido" ColumnName="segundoApellido" />
+          <ScalarProperty Name="genero" ColumnName="genero" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="identidad" ColumnName="identidad" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
+          <ScalarProperty Name="edad" ColumnName="edad" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

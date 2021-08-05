@@ -20,6 +20,8 @@ namespace Sistema_Boleteria
         }
     
         public byte idBoleto { get; set; }
+        public byte idtipo { get; set; }
+        public byte iddestino { get; set; }
         public decimal efectivoTotal { get; set; }
         public System.DateTime fechaEmision { get; set; }
         public byte cantidad { get; set; }

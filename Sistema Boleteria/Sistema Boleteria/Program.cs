@@ -16,7 +16,7 @@ namespace Sistema_Boleteria
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Boleteria());
+            Application.Run(new Form1());
         }
     }
 }

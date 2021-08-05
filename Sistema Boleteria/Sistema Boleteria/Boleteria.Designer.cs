@@ -48,11 +48,13 @@ namespace Sistema_Boleteria
             this.btnPagar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lblPrecio = new System.Windows.Forms.Label();
-            this.lblCantidad = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
+            this.lblCantidad = new System.Windows.Forms.Label();
+            this.lblPrecio = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lblCambio = new System.Windows.Forms.Label();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.lblIdUsuario = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -265,6 +267,39 @@ namespace Sistema_Boleteria
             this.groupBox2.TabIndex = 22;
             this.groupBox2.TabStop = false;
             // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTotal.Location = new System.Drawing.Point(25, 219);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(50, 25);
+            this.lblTotal.TabIndex = 20;
+            this.lblTotal.Text = "0.00";
+            // 
+            // lblCantidad
+            // 
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantidad.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblCantidad.Location = new System.Drawing.Point(25, 60);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(23, 25);
+            this.lblCantidad.TabIndex = 19;
+            this.lblCantidad.Text = "0";
+            // 
+            // lblPrecio
+            // 
+            this.lblPrecio.AutoSize = true;
+            this.lblPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblPrecio.Location = new System.Drawing.Point(25, 138);
+            this.lblPrecio.Name = "lblPrecio";
+            this.lblPrecio.Size = new System.Drawing.Size(50, 25);
+            this.lblPrecio.TabIndex = 18;
+            this.lblPrecio.Text = "0.00";
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.lblCambio);
@@ -278,39 +313,6 @@ namespace Sistema_Boleteria
             this.groupBox3.TabIndex = 23;
             this.groupBox3.TabStop = false;
             // 
-            // lblPrecio
-            // 
-            this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblPrecio.Location = new System.Drawing.Point(25, 138);
-            this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(50, 25);
-            this.lblPrecio.TabIndex = 18;
-            this.lblPrecio.Text = "0.00";
-            // 
-            // lblCantidad
-            // 
-            this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidad.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCantidad.Location = new System.Drawing.Point(25, 60);
-            this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(23, 25);
-            this.lblCantidad.TabIndex = 19;
-            this.lblCantidad.Text = "0";
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTotal.Location = new System.Drawing.Point(25, 219);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(50, 25);
-            this.lblTotal.TabIndex = 20;
-            this.lblTotal.Text = "0.00";
-            // 
             // lblCambio
             // 
             this.lblCambio.AutoSize = true;
@@ -322,12 +324,37 @@ namespace Sistema_Boleteria
             this.lblCambio.TabIndex = 21;
             this.lblCambio.Text = "0.00";
             // 
+            // lblFecha
+            // 
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblFecha.Location = new System.Drawing.Point(61, 604);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(23, 25);
+            this.lblFecha.TabIndex = 21;
+            this.lblFecha.Text = "0";
+            // 
+            // lblIdUsuario
+            // 
+            this.lblIdUsuario.AutoSize = true;
+            this.lblIdUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdUsuario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblIdUsuario.Location = new System.Drawing.Point(33, 49);
+            this.lblIdUsuario.Name = "lblIdUsuario";
+            this.lblIdUsuario.Size = new System.Drawing.Size(23, 25);
+            this.lblIdUsuario.TabIndex = 24;
+            this.lblIdUsuario.Text = "0";
+            this.lblIdUsuario.Visible = false;
+            // 
             // Boleteria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(537, 648);
+            this.Controls.Add(this.lblIdUsuario);
+            this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -377,5 +404,7 @@ namespace Sistema_Boleteria
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblCantidad;
         private System.Windows.Forms.Label lblCambio;
+        private System.Windows.Forms.Label lblFecha;
+        private System.Windows.Forms.Label lblIdUsuario;
     }
 }

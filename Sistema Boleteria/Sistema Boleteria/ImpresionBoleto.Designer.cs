@@ -31,14 +31,12 @@ namespace Sistema_Boleteria
         {
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblFechaEmisión = new System.Windows.Forms.Label();
+            this.lblTotalpagado = new System.Windows.Forms.Label();
+            this.lblCantidad = new System.Windows.Forms.Label();
+            this.lblDestino = new System.Windows.Forms.Label();
+            this.lblIdBoleto = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -61,14 +59,12 @@ namespace Sistema_Boleteria
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.LightBlue;
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.lblFechaEmisión);
+            this.groupBox1.Controls.Add(this.lblTotalpagado);
+            this.groupBox1.Controls.Add(this.lblCantidad);
+            this.groupBox1.Controls.Add(this.lblDestino);
+            this.groupBox1.Controls.Add(this.lblIdBoleto);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -80,71 +76,60 @@ namespace Sistema_Boleteria
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             // 
-            // label13
+            // lblFechaEmisión
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label13.Location = new System.Drawing.Point(19, 457);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(62, 20);
-            this.label13.TabIndex = 24;
-            this.label13.Text = "label13";
+            this.lblFechaEmisión.AutoSize = true;
+            this.lblFechaEmisión.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaEmisión.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblFechaEmisión.Location = new System.Drawing.Point(19, 457);
+            this.lblFechaEmisión.Name = "lblFechaEmisión";
+            this.lblFechaEmisión.Size = new System.Drawing.Size(62, 20);
+            this.lblFechaEmisión.TabIndex = 24;
+            this.lblFechaEmisión.Text = "label13";
             // 
-            // label12
+            // lblTotalpagado
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label12.Location = new System.Drawing.Point(276, 346);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(62, 20);
-            this.label12.TabIndex = 23;
-            this.label12.Text = "label12";
+            this.lblTotalpagado.AutoSize = true;
+            this.lblTotalpagado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalpagado.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblTotalpagado.Location = new System.Drawing.Point(175, 349);
+            this.lblTotalpagado.Name = "lblTotalpagado";
+            this.lblTotalpagado.Size = new System.Drawing.Size(62, 20);
+            this.lblTotalpagado.TabIndex = 22;
+            this.lblTotalpagado.Text = "label11";
             // 
-            // label11
+            // lblCantidad
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label11.Location = new System.Drawing.Point(19, 346);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(62, 20);
-            this.label11.TabIndex = 22;
-            this.label11.Text = "label11";
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantidad.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblCantidad.Location = new System.Drawing.Point(276, 215);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(62, 20);
+            this.lblCantidad.TabIndex = 21;
+            this.lblCantidad.Text = "label10";
             // 
-            // label10
+            // lblDestino
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label10.Location = new System.Drawing.Point(276, 215);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(62, 20);
-            this.label10.TabIndex = 21;
-            this.label10.Text = "label10";
+            this.lblDestino.AutoSize = true;
+            this.lblDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDestino.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblDestino.Location = new System.Drawing.Point(19, 215);
+            this.lblDestino.Name = "lblDestino";
+            this.lblDestino.Size = new System.Drawing.Size(53, 20);
+            this.lblDestino.TabIndex = 20;
+            this.lblDestino.Text = "label9";
             // 
-            // label9
+            // lblIdBoleto
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label9.Location = new System.Drawing.Point(19, 215);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 20);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "label9";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(162, 85);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 20);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "label8";
+            this.lblIdBoleto.AutoSize = true;
+            this.lblIdBoleto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdBoleto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblIdBoleto.Location = new System.Drawing.Point(161, 82);
+            this.lblIdBoleto.Name = "lblIdBoleto";
+            this.lblIdBoleto.Size = new System.Drawing.Size(53, 20);
+            this.lblIdBoleto.TabIndex = 19;
+            this.lblIdBoleto.Text = "label8";
             // 
             // label7
             // 
@@ -157,23 +142,12 @@ namespace Sistema_Boleteria
             this.label7.TabIndex = 18;
             this.label7.Text = "Fecha Emisión";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(275, 297);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 24);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "Cambio:";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(18, 297);
+            this.label4.Location = new System.Drawing.Point(174, 300);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(138, 24);
             this.label4.TabIndex = 16;
@@ -237,6 +211,7 @@ namespace Sistema_Boleteria
             this.Name = "ImpresionBoleto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ImpresionBoleto";
+            this.Load += new System.EventHandler(this.ImpresionBoleto_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -247,14 +222,12 @@ namespace Sistema_Boleteria
 
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblFechaEmisión;
+        private System.Windows.Forms.Label lblTotalpagado;
+        private System.Windows.Forms.Label lblCantidad;
+        private System.Windows.Forms.Label lblDestino;
+        private System.Windows.Forms.Label lblIdBoleto;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

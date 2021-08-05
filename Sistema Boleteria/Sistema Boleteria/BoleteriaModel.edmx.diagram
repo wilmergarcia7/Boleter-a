@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5dc24eac9d75438ea815a9955a618f95" Name="Diagram1">
+        <EntityTypeShape EntityType="BDBoleteriaModel.Administradores" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDBoleteriaModel.Boletos" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDBoleteriaModel.Destinos" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDBoleteriaModel.DetalleBoletos" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDBoleteriaModel.Generos" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDBoleteriaModel.TiposdeBoletos" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDBoleteriaModel.Usuarios" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <AssociationConnector Association="BDBoleteriaModel.FK_Usuarios_Administradores" ManuallyRouted="false" />
+        <AssociationConnector Association="BDBoleteriaModel.FK_Boletos_Destinos" ManuallyRouted="false" />
+        <AssociationConnector Association="BDBoleteriaModel.FK_Boletos_TiposdeBoletos" ManuallyRouted="false" />
+        <AssociationConnector Association="BDBoleteriaModel.FK_DetalleBoletos_Boletos" ManuallyRouted="false" />
+        <AssociationConnector Association="BDBoleteriaModel.FK_DetalleBoletos_Usuarios" ManuallyRouted="false" />
+        <AssociationConnector Association="BDBoleteriaModel.FK_Usuarios_Generos" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

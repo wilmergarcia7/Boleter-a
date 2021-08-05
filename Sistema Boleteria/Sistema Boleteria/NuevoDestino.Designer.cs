@@ -45,22 +45,22 @@ namespace Sistema_Boleteria
             // 
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSalir.Location = new System.Drawing.Point(573, 395);
+            this.btnSalir.Location = new System.Drawing.Point(36, 12);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(95, 42);
             this.btnSalir.TabIndex = 0;
-            this.btnSalir.Text = "Salir";
+            this.btnSalir.Text = "Volver";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(365, 9);
+            this.label1.Location = new System.Drawing.Point(120, 68);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 36);
+            this.label1.Size = new System.Drawing.Size(158, 39);
             this.label1.TabIndex = 1;
             this.label1.Text = "Destinos";
             // 
@@ -69,7 +69,7 @@ namespace Sistema_Boleteria
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(53, 104);
+            this.label2.Location = new System.Drawing.Point(41, 122);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 29);
             this.label2.TabIndex = 2;
@@ -80,7 +80,7 @@ namespace Sistema_Boleteria
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(53, 195);
+            this.label3.Location = new System.Drawing.Point(42, 195);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 29);
             this.label3.TabIndex = 3;
@@ -88,23 +88,25 @@ namespace Sistema_Boleteria
             // 
             // txtDestino
             // 
-            this.txtDestino.Location = new System.Drawing.Point(58, 154);
+            this.txtDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDestino.Location = new System.Drawing.Point(47, 154);
             this.txtDestino.Name = "txtDestino";
-            this.txtDestino.Size = new System.Drawing.Size(230, 24);
+            this.txtDestino.Size = new System.Drawing.Size(297, 30);
             this.txtDestino.TabIndex = 4;
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(58, 243);
+            this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecio.Location = new System.Drawing.Point(47, 227);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(230, 24);
+            this.txtPrecio.Size = new System.Drawing.Size(297, 30);
             this.txtPrecio.TabIndex = 5;
             // 
             // btnGuardar
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnGuardar.Location = new System.Drawing.Point(58, 395);
+            this.btnGuardar.Location = new System.Drawing.Point(47, 546);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(117, 42);
             this.btnGuardar.TabIndex = 6;
@@ -116,7 +118,7 @@ namespace Sistema_Boleteria
             // 
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnNuevo.Location = new System.Drawing.Point(371, 395);
+            this.btnNuevo.Location = new System.Drawing.Point(227, 546);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(117, 42);
             this.btnNuevo.TabIndex = 8;
@@ -127,7 +129,7 @@ namespace Sistema_Boleteria
             // dgDestinos
             // 
             this.dgDestinos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgDestinos.Location = new System.Drawing.Point(371, 104);
+            this.dgDestinos.Location = new System.Drawing.Point(47, 279);
             this.dgDestinos.Name = "dgDestinos";
             this.dgDestinos.RowHeadersWidth = 51;
             this.dgDestinos.RowTemplate.Height = 24;
@@ -140,7 +142,7 @@ namespace Sistema_Boleteria
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.ClientSize = new System.Drawing.Size(716, 506);
+            this.ClientSize = new System.Drawing.Size(389, 611);
             this.Controls.Add(this.dgDestinos);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnGuardar);

@@ -14,6 +14,7 @@ namespace Sistema_Boleteria
     {
         BDBoleteriaEntities entity = new BDBoleteriaEntities();
         long idDestinos = 0;
+        internal static int idBoleto;
         public Boleteria()
         {
             InitializeComponent();
@@ -26,6 +27,9 @@ namespace Sistema_Boleteria
 
         private void Boleteria_Load(object sender, EventArgs e)
         {
+
+            lblFecha.Text = DateTime.Now.ToString();
+            lblIdUsuario.Text = Form1.idUsuario.ToString();
             var tDestino = from de in entity.Destinos
                            select new
                            {
@@ -84,10 +88,16 @@ namespace Sistema_Boleteria
         {
             decimal total;
             decimal descuento;
+            long valor = 0;
 
             if(Convert.ToInt32(lblCantidad.Text) <= 0 || Convert.ToDecimal(lblPrecio.Text) <= 0)
             {
                 MessageBox.Show("¡Cantidad inválida!");
+                return;
+            }
+            else if (!long.TryParse(txtCantidad.Text, out valor))
+            {
+                MessageBox.Show("¡Ingrese solo números en el campo cantidad!");
                 return;
             }
             else
@@ -107,12 +117,8 @@ namespace Sistema_Boleteria
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
-            if(Convert.ToDecimal(txtEfectivo.Text) < Convert.ToDecimal(lblTotal.Text))
-            {
-                MessageBox.Show("¡Cantidad pagada es inferior al total!");
-                return;
-            }
-            else if (txtEfectivo.Text.Equals(""))
+            long valor = 0;
+            if (txtEfectivo.Text.Equals(""))
             {
                 MessageBox.Show("¡Ingrese la cantidad de pago!");
                 return;
@@ -122,17 +128,56 @@ namespace Sistema_Boleteria
                 MessageBox.Show("¡El efectivo no puede ser 0!");
                 return;
             }
+            else if (Convert.ToDecimal(txtEfectivo.Text) < Convert.ToDecimal(lblTotal.Text))
+            {
+                MessageBox.Show("¡Cantidad pagada es inferior al total!");
+                return;
+            }
+            else if (!long.TryParse(txtEfectivo.Text, out valor)) {  
+                MessageBox.Show("¡Ingrese solo números en el campo efectivo!");
+                return;
+            }
+
             else
             {
                 lblCambio.Text = Convert.ToString(Convert.ToDecimal(txtEfectivo.Text) - Convert.ToDecimal(lblTotal.Text));
                 btnImprimir.Enabled = true;
+
+                Boletos tbBoleto = new Boletos();
+                tbBoleto.idtipo = Convert.ToByte(cmbTipoBoleto.SelectedIndex+1);
+                tbBoleto.iddestino = Convert.ToByte(cmbDestino.SelectedIndex);
+                tbBoleto.efectivoTotal = Convert.ToDecimal(lblTotal.Text);
+                tbBoleto.fechaEmision = Convert.ToDateTime(lblFecha.Text);
+                tbBoleto.cantidad = Convert.ToByte(lblCantidad.Text);
+                entity.Boletos.Add(tbBoleto);
+
+                entity.SaveChanges();//se confirma la insercion
+                idBoleto = tbBoleto.idBoleto;
+                DetalleBoletos tbDetBoletos = new DetalleBoletos();
+                tbDetBoletos.idboleto = tbBoleto.idBoleto;
+                tbDetBoletos.idUsuario = Convert.ToByte(lblIdUsuario.Text);
+                entity.DetalleBoletos.Add(tbDetBoletos);
+
+                entity.SaveChanges();//se confirma la insercion
+
             }
+            btnPagar.Enabled = false;
+            MessageBox.Show("¡Pago completado correctamente!");
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
+            
             ImpresionBoleto boleto = new ImpresionBoleto();
             boleto.Show();
+            txtCantidad.Text = "";
+            cmbDestino.Text = "";
+            cmbTipoBoleto.Text = "";
+            lblCambio.Text = "0.00";
+            lblCantidad.Text = "0";
+            lblPrecio.Text = "0.00";
+            lblTotal.Text = "0.00";
+            txtEfectivo.Text = "0";
 
         }
     }

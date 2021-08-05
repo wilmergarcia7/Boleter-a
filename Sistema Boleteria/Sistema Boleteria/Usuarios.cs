@@ -24,13 +24,18 @@ namespace Sistema_Boleteria
         public string segundoNombre { get; set; }
         public string primerApellido { get; set; }
         public string segundoApellido { get; set; }
-        public string genero { get; set; }
+        public byte genero { get; set; }
         public string telefono { get; set; }
         public string direccion { get; set; }
         public string identidad { get; set; }
         public string usuario { get; set; }
         public string password { get; set; }
+        public byte isAdmin { get; set; }
+        public int edad { get; set; }
+        public bool estado { get; set; }
     
+        public virtual Administradores Administradores { get; set; }
         public virtual ICollection<DetalleBoletos> DetalleBoletos { get; set; }
+        public virtual Generos Generos { get; set; }
     }
 }

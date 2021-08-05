@@ -41,9 +41,25 @@ namespace Sistema_Boleteria
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            decimal precio = 0;
+            int valor = 0;
             if (txtDestino.Text.Equals("") || txtPrecio.Text.Equals(""))
             {
                 MessageBox.Show("¡Ingrese información en todos los campos!");
+                return;
+            }
+            else if (!int.TryParse(txtPrecio.Text, out valor))
+            {
+                MessageBox.Show("¡Ingrese solo números en el precio!");
+                return;
+            }
+            else if (int.TryParse(txtPrecio.Text, out valor))
+            {
+                precio = Convert.ToDecimal(txtPrecio.Text);
+            }
+            if (entity.Destinos.Any(x => x.destino == txtDestino.Text && x.precio == precio))
+            {
+                MessageBox.Show("¡El destino y precio ingresado ya existe!");
                 return;
             }
             if (editar)

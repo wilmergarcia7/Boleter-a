@@ -54,9 +54,14 @@ namespace Sistema_Boleteria
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+
             if (txtTipoBoleto.Text.Equals("") )
             {
                 MessageBox.Show("¡Ingrese información en todos los campos!");
+                return;
+            }else if (entity.TiposdeBoletos.Any(x => x.tipodeBoleto == txtTipoBoleto.Text))
+            {
+                MessageBox.Show("¡Este tipo de boleto ya existe!");
                 return;
             }
             if (editar)
@@ -89,7 +94,7 @@ namespace Sistema_Boleteria
                             };
             dgTipoBoleto.DataSource = taTipoBoleto.CopyAnonymusToDataTable();
 
-            MessageBox.Show("Informacion guardada!");
+            MessageBox.Show("¡Informacion guardada!");
         }
 
         private void TipoBoleto_Load(object sender, EventArgs e)
